@@ -1,0 +1,58 @@
+1. What is an interface and what is its relation to an implementation?
+An interface is where you can say these are the methods that have to be implemented in the class. The interface doesn't describe how the methods should be implemented, that is done in the specific class that is going to implement the interface.
+An interface lets different parts of the program to communicate with each other. Some times it will reduce the amount of code in the program.  
+An interface is the skeleton where the bones are the methods. The implementation is where the you get some meat on the bones. The meat is the code that will calculate what the method was created for.
+
+2. What is the relation between an interface and an abstract data type (ADT)?
+An interface and an ADT can be used as building blocks for the program. 
+Some of the ADT's are known and have interfaces that lets the programmer to use the ADT without understanding the underlying implementations.
+
+3. What is the relation between an interface and an application programming interface(API)?
+An API is used to let different programs communicate. For example Facebook has an API where I as a programmer can get information about how I can use their login-function to my new phone app.
+An API is abstract, it isn't code it's more like a "map" of how to communicate. It contains code snippets. An interface is concrete (Swedish "konkret") because it actually exists in the code.
+
+4. In the above example, how would the main method look if FixedArrayStack and LinkedStack didn’t share an interface? Which is “better” and why?
+When they are instantiated they would have to use different types of objects. Now they are both using the "stack"-object to create the stacks.
+Also, when the code wants to push and pop you would have to write two different method calls. One for FixedArratStack and one for LinkedStack. 
+Which means that you would have to use more code in your program. And that's why a shared interface is to prefer in this case. 
+
+5. What is a generic type parameter?
+A generic type parameter uses <> when used in code. The parameter that is put inside the brackets decides which type that should be returned. It's flexible in the way that it can handle different types of data types. Generics make it possible to code independently of which data type is used as parameter.
+
+6. What are the advantages/disadvantages of using generics over having multiple specialized implementations? Can you have a “hybrid” model between generics and specialized implementations?
+
+The advantage of using generics is that you only need one method to handle all the data types, that means that you could have shorter code. The disadvantage is that you can't optimize your code for a specific data type, because you have to take notice of all data types.
+A hybrid version would avoid this. You could handle all the data types and still optimize for some of the more common data types.
+
+----------------------------------
+BinarySearch()
+
+Questions Be prepared to answer the following questions orally:
+1. What are the pre- and post-conditions for binary search?
+The pre-conditon is a sorted list in ascending order. The post-condition is that you get a index value to where the answer where found or -1 if the key didn't exist in the list.
+
+2. How does binary search work?
+You get a list and sort it. Then you get a key that you want to check if it is in the list.
+lo is set to 0 and hi is set to the array's length. If you didn't find it in the list you return -1 which will make the program print out your key.
+While the program is searching for your key it compares if the middle of the array is bigger(returns +1)/the same(returns 0)/smaller(returns -1) than the key. Then depending on the return the search method ignores the upper or lower half of the list  and repeats the search, or it did find the right value and then returns to the method call (main method).
+
+
+3. What is the time complexity of binary search?
+The following
+Best case: 1	Worst case: ~lgN	(Average case: ~lgN)
+
+4. Construct an arbitrary non-trivial array a that fulfils the pre-conditions for binary
+search. Construct keys ka, kb with
+a) worst case lookup time
+b) best case lookup time
+if used with binary search on a. How many recursion steps does it take to find
+ka, kb?
+
+a) ka have the index 0 or N-1 in the array (where N = the amount of values in the list).  It takes lg(N) in recursion steps.
+b) kb have the index value of (N-1)/2 in the array. Which means that mid will point to kb in the array. It takes 0 recursion steps.
+
+For example
+1, 2, 14, 17, 18, 19, 23, 25, 26, 28, 30, 31, 33
+N = 13
+ka = 1, takes 2 recursion steps
+kb = 23, takes 0 recursion steps
