@@ -5,7 +5,7 @@
 public abstract class ErrorPascal implements Pascal {
     public void printPascal(int n) throws Exception{
         if(n < 0) {
-            throw new Exception("n can't be 0 or less!");
+            throw new Exception("Invalid n, n can't be 0 or less!");
         }
     }
 

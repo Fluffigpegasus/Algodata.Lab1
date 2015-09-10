@@ -35,12 +35,8 @@ public class OptimizedPascal extends ErrorPascal implements Pascal{
     // saves calculations in an array
     public int binom(int n, int k) throws Exception{
         super.binom(n, k);
-        if(n == k){
-            Driver.mem[n][n] = 1;
-            return 1;
-        }
-        if(k == 0){
-            Driver.mem[n][0] = 1;
+        if(n == k || k == 0){
+            Driver.mem[n][k] = 1;
             return 1;
         }
         //check if already calculated
